@@ -77,9 +77,7 @@ export default async function handler(
     }
 
     if (type === "follow") {
-      const fid = action.interactor.fid;
-
-      const followings = await fetchAllFollowing(fid);
+      const followings = await fetchAllFollowing(action.interactor.fid);
 
       console.log("followings", followings);
 
@@ -134,6 +132,7 @@ export default async function handler(
       );
     }
   } catch (err) {
+    console.log(err);
     return res.status(200).send(
       computeHtml({
         imagePath: "/image.png",
