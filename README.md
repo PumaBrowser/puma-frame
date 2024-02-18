@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Submission for thirdweb hackathon
+
+- Using thirdweb engine
+- Contract hosted on thirdweb
+- coinbase/onchainkit for frames
+
+## Environment
+
+You can use this project with your own environment by creating a `.env.local` from `.env.template`. Filling in all the details should get you going. The only thing to consider is the farcaster user ids and handles. Check the implementation inside `config.ts` to see how to use the `FARCASTER_USER_ID` and `FARCASTER_USER_HANDLE` environment variables.
 
 ## Getting Started
 
