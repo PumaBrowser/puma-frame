@@ -38,7 +38,6 @@ export const fetchAllFollowing = async (fid: number): Promise<User[]> => {
     });
     users = users.concat(result.result.users);
     cursor = result.result.next.cursor;
-    console.log(cursor);
   } while (cursor !== "" && cursor !== null);
 
   return users;

@@ -81,7 +81,23 @@ export default async function handler(
 
       const followings = await fetchAllFollowing(fid);
 
+      console.log("followings", followings);
+
       const hasToFollow = config.warpcast.fIds;
+
+      const oneOfTheOwners = hasToFollow.some(
+        (fid) => Number(fid) === action.interactor.fid
+      );
+
+      if (oneOfTheOwners) {
+        return res.status(200).send(
+          computeHtml({
+            imagePath: "/image.png",
+            postType: "mint",
+            content: "Mint",
+          })
+        );
+      }
 
       const isFollowingAllFids = hasToFollow.every((fid) =>
         followings.some((following) => following.fid === Number(fid))
