@@ -34,6 +34,7 @@ export default async function handler(
   }
 
   try {
+    console.log(req.query);
     const { type } = requestQuerySchema.parse(req.query);
 
     const { trustedData } = requestBodyWarpcastSchema.parse(req.body);
