@@ -43,9 +43,6 @@ export const fetchAllFollowing = async (fid: number): Promise<User[]> => {
   return users;
 };
 
-// const rishFID = 194;
-// const rishFollowings = await fetchAllFollowing(rishFID);
-
 export class Warpcast {
   private static get computeDefaultHeader() {
     return {
