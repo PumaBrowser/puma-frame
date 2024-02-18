@@ -1,8 +1,20 @@
 # Submission for thirdweb hackathon
 
+A starter app to deploy a Farcaster Frame that allows users that follow the account(s) you chose to mint an NFT
+
+## Technologies used
+
 - Using thirdweb engine
 - Contract hosted on thirdweb
 - coinbase/onchainkit for frames
+
+## Overview
+
+[Loom](https://www.loom.com/share/a25a2e10d69b40a3a89ebb5ac891694f)
+
+## Goals
+
+Provide tooling for organizations / users to provide a unique way to connect with their audience in a meanigful way
 
 ## Environment
 
