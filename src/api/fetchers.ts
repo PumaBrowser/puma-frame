@@ -58,6 +58,8 @@ export const httpFetchOwned = async (reciever: string) => {
 
   const result = await response.json();
 
+  console.log("result", result);
+
   return ownedResponseSchema.parse(result);
 };
 
