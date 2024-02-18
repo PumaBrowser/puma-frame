@@ -14,15 +14,18 @@ export default function Document() {
             .map((handle) => handle)
             .join(", ")} on Warpcast to claim`}
         />
-        <meta property="og:image" content={`${config.hostUrl}/image.png`} />
+        <meta
+          property="og:image"
+          content={`https://${config.hostUrl}/image.png`}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <body>
         <Main />
         <FrameMetadata
-          image={`${config.hostUrl}/image.png`}
-          postUrl={`${config.hostUrl}/api/mint?type=start`}
+          image={`https://${config.hostUrl}/image.png`}
+          postUrl={`https://${config.hostUrl}/api/mint?type=start`}
           buttons={[
             {
               label: "Get Started",
