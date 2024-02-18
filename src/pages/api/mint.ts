@@ -39,9 +39,12 @@ export default async function handler(
 
     console.log(type === "start");
 
+    console.log(req.body);
     const { trustedData } = requestBodyWarpcastSchema.parse(req.body);
-
+    console.log(trustedData.messageBytes);
     const action = await Warpcast.validateMessage(trustedData.messageBytes);
+
+    console.log(action);
 
     if (type === "start") {
       const isNFTOwned = await ThirdWebEngine.isNFTOwned(
