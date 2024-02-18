@@ -70,8 +70,8 @@ export default async function handler(
       return res.status(200).send(
         computeHtml({
           imagePath: "/image.png",
-          postType: "recast",
-          content: "Like & recast to mint",
+          postType: "follow",
+          content: "Follow to mint",
         })
       );
     }
