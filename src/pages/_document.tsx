@@ -22,7 +22,7 @@ export default function Document() {
         <Main />
         <FrameMetadata
           image={`${config.hostUrl}/image.png`}
-          postUrl={`${config.hostUrl}/api/mint?type=start`}
+          postUrl={`${config.hostUrl}/api/mint?type="start"`}
           buttons={[
             {
               label: "Get Started",
