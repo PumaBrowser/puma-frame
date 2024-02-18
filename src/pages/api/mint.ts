@@ -14,7 +14,7 @@ const requestBodyWarpcastSchema = z.object({
 });
 
 const requestQuerySchema = z.object({
-  // "start" = will display Re-cast to mint & Like to mint
+  // "start" = will display Follow to mint
   // "follow" = will attempt to see if you follow the user
   // "mint" = will be the actual mint process and display a congratulation html view
   type: z.union([z.literal("start"), z.literal("follow"), z.literal("mint")]),
@@ -36,6 +36,8 @@ export default async function handler(
   try {
     console.log(req.query);
     const { type } = requestQuerySchema.parse(req.query);
+
+    console.log(type === "start");
 
     const { trustedData } = requestBodyWarpcastSchema.parse(req.body);
 
