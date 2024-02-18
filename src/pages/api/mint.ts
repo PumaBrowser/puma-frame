@@ -34,17 +34,11 @@ export default async function handler(
   }
 
   try {
-    console.log(req.query);
     const { type } = requestQuerySchema.parse(req.query);
 
-    console.log(type === "start");
-
-    console.log(req.body);
     const { trustedData } = requestBodyWarpcastSchema.parse(req.body);
-    console.log(trustedData.messageBytes);
-    const action = await Warpcast.validateMessage(trustedData.messageBytes);
 
-    console.log(action);
+    const action = await Warpcast.validateMessage(trustedData.messageBytes);
 
     if (type === "start") {
       const isNFTOwned = await ThirdWebEngine.isNFTOwned(
@@ -84,8 +78,6 @@ export default async function handler(
 
     if (type === "follow") {
       const followings = await fetchAllFollowing(action.interactor.fid);
-
-      console.log("followings", followings);
 
       const hasToFollow = config.warpcast.fIds;
 
