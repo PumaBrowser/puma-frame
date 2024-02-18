@@ -45,6 +45,8 @@ export default async function handler(
         action.interactor.custody_address
       );
 
+      console.log("IS NFT OWNED", isNFTOwned);
+
       if (isNFTOwned) {
         return res.status(200).send(
           computeHtml({
@@ -57,6 +59,8 @@ export default async function handler(
 
       const isBalanceLow = await ThirdWebEngine.isBalanceLow();
 
+      console.log("IS BALANCE LOW", isBalanceLow);
+
       if (isBalanceLow) {
         return res.status(200).send(
           computeHtml({
@@ -66,6 +70,8 @@ export default async function handler(
           })
         );
       }
+
+      console.log("FOLLOW");
 
       return res.status(200).send(
         computeHtml({
